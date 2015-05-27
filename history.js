@@ -162,8 +162,7 @@
                 } else if (path != basepath) {
                     path = path.replace(/([^\/])\?/, '$1/?');
                     if ((new RegExp("^" + basepath, "i")).test(path)) {
-                        windowLocation.replace(basepath + '#' + path.
-                            replace(new RegExp("^" + basepath, "i"), settings["type"]) + windowLocation.hash);
+                        windowLocation.replace(basepath + '#!/' + path.replace(new RegExp("^" + basepath, "i"), settings["type"]) + windowLocation.hash);
                     }
                 }
             }
@@ -410,7 +409,7 @@
                 // form the absolute link from the hash
                 // https://github.com/devote/HTML5-History-API/issues/50
                 href = windowLocation.protocol.replace(/:.*$|$/, ':') + '//' + windowLocation.host + settings['basepath']
-                    + href.replace(new RegExp("^#[\/]?(?:" + settings["type"] + ")?"), "");
+                    + href;
             }
         }
         // that would get rid of the links of the form: /../../
